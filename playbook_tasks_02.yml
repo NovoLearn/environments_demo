@@ -1,0 +1,9 @@
+# Install standard databases
+- name: Install SQLite
+  apt:
+    name: sqlite3
+    state: latest
+- name: Install redis
+  apt:
+    name: redis
+    state: latest

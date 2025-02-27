@@ -1,0 +1,24 @@
+# Initial development environment management packages installation
+- name: Install pip
+  apt:
+    name: python3-pip
+    state: latest
+- name: Install pipx
+  apt:
+    name: pipx
+    state: present
+- name: Install python3-venv
+  apt:
+    name: python3-venv
+    state: present
+- name: Install poetry
+  apt:
+    name: python3-poetry
+    state: latest
+#- name: Install uv using pipx
+#  command: pipx install uv
+#  become: false  # Become set to false to ensure not installed as root else permissions issues
+- name: Install uv using community.general.pipx
+  community.general.pipx:
+    name: uv
+  become: false # Become set to false to ensure not installed as root else permissions issues

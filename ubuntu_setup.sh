@@ -14,3 +14,5 @@ apt upgrade -y
 
 # Install ansible
 apt install ansible -y
+
+# Now run ansible and one or more playbooks, or execute it here in the script

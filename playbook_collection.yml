@@ -1,0 +1,14 @@
+- name: Ubuntu server general packages installations
+  hosts: ubuntu_servers
+  become: yes
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+    - include_tasks: playbook_tasks_01.yml # Initial development environment management packages installation
+
+- name: Install databases
+  hosts: ubuntu_servers
+  become: yes
+  tasks:    
+    - include_tasks: playbook_tasks_02.yml # Install standard databases
